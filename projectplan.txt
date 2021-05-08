@@ -1,0 +1,51 @@
+Visual: Historical data of a single currency over time
+API: https://exchangerate.host/#/docs
+
+-inputs: Start date, end date, frequency of data, currency, OPTIONAL: 'base' currency
+- I control all input options via dropdowns
+
+
+THE PLAN:
+-Start by getting data for one option of all of these, and calcuate all the bar heights and labels.
+-Then, one at a time, I can build in variable amounts
+-Then, figure out what the 'initial' values returned are.
+--If time, I can generate the list of currencies from the API
+--If time, I can generate the available dates from the API
+
+
+Step one: data from one place
+-move margin from below bars to above bars DONE
+-get data from API. stash it somewhere. global variable? DONE
+-Change internal bar chart from 5 grid rows, to a single Flexbox
+-manipulate data. from API data --> CSS properties. stash variable somewhere.
+-DOM manipulation (render function)
+
+
+step 1.5: accommodate variable number of bars
+-maybe create a grid within a grid????
+-or maybe this is what flexbox is for?
+
+Step 2: variable amounts
+-add fields to margin
+
+
+
+
+
+
+
+
+
+
+
+-pseudo classes - every other bar a different color or design
+-
+
+
+
+
+
+requirements still to hit:
+-bem
+-css variables
+-js alert
