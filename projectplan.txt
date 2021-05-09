@@ -16,7 +16,7 @@ THE PLAN:
 Step one: data from one place
 -move margin from below bars to above bars DONE
 -get data from API. stash it somewhere. global variable? DONE
--Change internal bar chart from 5 grid rows, to a single Flexbox
+-Change internal bar chart from 5 grid rows, to a single Flexbox DONE
 -manipulate data. from API data --> CSS properties. stash variable somewhere.
 -DOM manipulation (render function)
 
