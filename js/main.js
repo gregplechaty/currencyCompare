@@ -8,46 +8,9 @@ let state = {
 };
 
 
-let singleState = {
-    rate: 1.0847,
-    percent: 43,
-    date: '2020-03-04'
-}
 
-let statesssssss = [
-    {
-        rate: 1.0847,
-        percent: 43,
-        date: '2020-03-04'
-    },
-    {
-        rate: 1.1181,
-        percent: 78,
-        date: '2020-03-04'
-    },
-    {
-        rate: 1.1063,
-        percent: 24,
-        date: '2020-03-04'
-    },
-];
 
 let stateObjects = [];
-
-let stateObjectsPractice = [
-    {
-        rate: 1.0847,
-        date: '2020-03-04'
-    },
-    {
-        rate: 1.1181,
-        date: '2020-03-04'
-    },
-    {
-        rate: 1.1063,
-        date: '2020-03-04'
-    },
-];
 
 
 function calculateDateArray() {
@@ -62,31 +25,25 @@ function calculateDateArray() {
         console.log(date > search);
     };
 };
-calculateDateArray();
-
-
 
 function calculateAddBarPercent() {
     console.log('function: calculateAddBarPercent')
     //Get array of rates
     let rateArray = []
-    for (let item of stateObjectsPractice) {
+    for (let item of stateObjects) {
         rateArray.push(item.rate)
     };
     console.log('rateArray: ', rateArray)
     //get largest value; sash in variable 'greatestRate'
-    let greatestRate = Math.max(1,1.1181); // Not sure why it isn't taking an Array
+    let greatestRate = Math.max(...rateArray); // Not sure why it isn't taking an Array
     console.log('greatestRate: ', greatestRate)
     //cycle through objects. for each, PUSH calculated percent based on greatestRate
-    for (let item of stateObjectsPractice) {
-        let barPercent = item.rate /  greatestRate;
-        console.log('barPercent: ', barPercent);
-        //let item.percent = barPercent); // need to figure out how to add new pair to object
+    for (let item of stateObjects) {
+        let barPercent = item.rate /  greatestRate * 100;
+        item['percent'] = barPercent; // need to figure out how to add new pair to object
     };
-    console.log('StateObjects: ', stateObjectsPractice)
 };
 
-calculateAddBarPercent();
 /* ORIGINAL createBar function
 function createBar() {
     for (let item in state.rates) {
@@ -115,13 +72,15 @@ function createBar() {
 };
 */
 //NEW function, looks at list of objects
-function createBar(statesssssss) {
-    for (let item of statesssssss) {
+function createBar() {
+    //TODO: this creates the graph 3 times. This is not efficient.
+    let container = document.querySelector('.ExchangeRateChart-display')
+    container.innerHTML = '';
+    for (let item of stateObjects) {
         let container = document.querySelector('.ExchangeRateChart-display')
         //
         bar = document.createElement('div');
         bar.className = "ExchangeRateChart-bar";
-        console.log('percent: ', item.percent);
         // TODO: calculate number of items in array, aka number of bars
         // Use this to determine the height of each bar. like 90/(# of bars)
         bar.setAttribute('style', 'width: ' + item.percent + '%; height: 30%')
@@ -131,7 +90,7 @@ function createBar(statesssssss) {
         bar.appendChild(barText);
         //
         barPara = document.createElement('p');
-        barPara.textContent = 'EUR';
+        barPara.textContent = item.date + ': The value of ' + item.currency + ' is '+ item.rate;
         barText.appendChild(barPara);
         // Set Alert. OOOORRRR the hover appear thing from solution, ideally
         //
@@ -178,27 +137,32 @@ function doFetch() {
     console.log('function: doFetch')
     let container = document.querySelector('.ExchangeRateChart-display')
     container.innerHTML = '';
+    stateObjects = [];
     //let search = document.querySelector('#search').value
     //console.log('search: ', search)
     // TODO: This is where I add calculateDateArray
     let dates = ['2020-04-04','2020-03-04','2020-02-04'];
     for (let date of dates) {
         console.log('date:', date);
-        fetch('https://api.exchangerate.host/' + date + '?symbols=USD')
+        let symbol = document.querySelector('#currency_select');
+        let ticker = symbol.value;
+        console.log('https://api.exchangerate.host/' + date + '?symbols=' + ticker);
+        fetch('https://api.exchangerate.host/' + date + '?symbols=' + ticker)
         .then(response => response.json())
         .then(data => {
-            console.log('data.rates:', data.rates.USD);
+            console.log('data.rates:', data.rates[ticker]);
             ////////////////// THIS IS WHAT WE WANT TO MODIFY
             //state.rates.push(data.rates.USD);
             // new one:
-            let barPercent = data
+            //let barPercent = data
             barObject = {
                 'date': date,
-                'rate': data.rates.USD
+                'currency': ticker,
+                'rate': data.rates[ticker]
             }
-            stateObjects.push();
+            stateObjects.push(barObject);
             ////////////
-            console.log('state.rates:', state.rates);
+            console.log('stateObjects:', stateObjects);
             // Add this render function back eventually render();
             //for (let rate of state.Object) {
             //    console.log(rate);
@@ -255,9 +219,8 @@ createBar
 
 */
 
-
-createBar(statesssssss);
 function render() {
     console.log('function: render');
+    calculateAddBarPercent();
     createBar();
 };

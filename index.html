@@ -27,6 +27,14 @@
             </div>
             <div class="ExchangeRateChart-margin"></div>
             <div class="ExchangeRateChart-legend">
+                <select id="currency_select">
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>JPY</option>
+                    <option>GBP</option>
+                    <option>AUD</option>
+                </select>
+                    
                 <input placeholder="How far back in time?" id="lookbackDate" />
                 <button onClick="doFetch()">Show me some data, aaarg!</button>
             </div>
