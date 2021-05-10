@@ -27,46 +27,47 @@
             </div>
             <div class="ExchangeRateChart-margin"></div>
             <div class="ExchangeRateChart-legend">
+                <div>
+                <label for="start_month">Start Date:</label>
+                <select id="start_month">
+                    <option value="00">Jan</option>
+                    <option value="01">Feb</option>
+                    <option value="02">Mar</option>
+                    <option value="03">Apr</option>
+                    <option value="04">May</option>
+                    <option value="05">Jun</option>
+                    <option value="06">Jul</option>
+                    <option value="07">Aug</option>
+                    <option value="08">Sep</option>
+                    <option value="09">Oct</option>
+                    <option value="10">Nov</option>
+                    <option value="11">Dec</option>
+                </select>
+                <select id="start_year">
+                    <option>2020</option>
+                    <option>2019</option>
+                    <option>2018</option>
+                    <option>2017</option>
+                    <option>2016</option>
+                </select>
+            </div>
+            <div>
+                <label for="numOfMonths">Number of months (up to 12):</label>
+                <input type="number" id="numOfMonths" min="1" max="12">
                 <select id="currency_select">
                     <option>USD</option>
                     <option>EUR</option>
                     <option>JPY</option>
                     <option>GBP</option>
                     <option>AUD</option>
+                    <option>HKD</optoin>
                 </select>
-                    
-                <input placeholder="How far back in time?" id="lookbackDate" />
-                <button onClick="doFetch()">Show me some data, aaarg!</button>
+            </div>
+                <button onClick="doFetch()">Show me the data!</button>
+                <button onClick="calculateDateArray()">Date practice</button>
             </div>
             <div class="ExchangeRateChart-display">
 
-<!--
-                <div class="ExchangeRateChart-bar" style="width: 60.4%; height: 10%"  onclick="alert('1 Euro = 1.208 American Dollars')">
-                    <div class="ExchangeRateChart-bar-text">
-                        <p>USD</p>
-                    </div>
-                </div>
-                <div class="ExchangeRateChart-bar" style="width: 43.5%; height: 10%" onclick="alert('1 Euro = 0.869 Pound sterling')">
-                    <div class="ExchangeRateChart-bar-text">
-                        <p>GPB</p>
-                    </div>
-                </div>
-                <div class="ExchangeRateChart-bar" style="width: 50%; height: 10%" onclick="alert('1 Euro = 1 Euro')">
-                    <div class="ExchangeRateChart-bar-text">
-                        <p>Baseline = 1 EUR</p>
-                    </div>
-                </div>
-                <div class="ExchangeRateChart-bar" style="width: 74.5%; height: 10%" onclick="alert('1 Euro = 1.49 Canadian dollars')">
-                    <div class="ExchangeRateChart-bar-text">
-                        <p>CAD</p>
-                    </div>
-                </div>
-                <div class="ExchangeRateChart-bar" style="width: 55.3%; height: 10%" onclick="alert('1 EUR = 1.105 Swiss francs')">
-                    <div class="ExchangeRateChart-bar-text">
-                        <p>CHF</p>
-                    </div>
-                </div>
--->
             </div>
             
             <div class="ExchangeRateChart-margin"></div>

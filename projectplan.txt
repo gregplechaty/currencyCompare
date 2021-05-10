@@ -19,14 +19,15 @@ Step one: data from one place
 -Change internal bar chart from 5 grid rows, to a single Flexbox DONE
 -manipulate data. from API data --> CSS properties. stash variable somewhere. DONE
 -DOM manipulation (render function) DONE
+-ADD Base currency and currency worth to amount
 
-
-step 1.5: accommodate variable number of bars
--maybe create a grid within a grid????
--or maybe this is what flexbox is for?
+step 1.5: accommodate variable number of bars DONE
+-Maybe variable 'base' value (not always zero)
 
 Step 2: variable amounts
--add fields to margin
+-Currency to compare
+-Date Range
+-Frequency
 
 
 Step 3: Modify code so render function generates a single time per query
