@@ -36,7 +36,16 @@ Step 3: Modify code so render function generates a single time per query
 
 
 
+Hello! I have a question of how much additional work I should put into HW2 for FrontEnd. I'm mostly done with the requirements, but I know I could work on some things:
+-I know I could change the minimum bar length.
+-I also know that I need to figure out how to render the function once, after all API calls finish. I was searching online and was thinking Promise objects could be one solution.
+-I could also add better descriptors
+-I could add more inputs
 
+Is it worth my time to revise one or two of these shortcomings? If you'd rather have me just submit for now, that's cool too. Thanks!
+
+repo: https://github.com/gregplechaty/currencyCompare
+page: https://gregplechaty.github.io/currencyCompare/
 
 
 
