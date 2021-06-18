@@ -20,56 +20,61 @@
     <div class="ExchangeRate">
         <div class="ExchangeRateChart">
             <div class="ExchangeRateChart-margin-top">
-                
             </div>
             <div class="ExchangeRateChart-title">
-                <h3">Currency Exchange Rates</h5>
+                <h3>Currency Exchange Rates</h3>
             </div>
-            <div class="ExchangeRateChart-margin"></div>
+            <div class="ExchangeRateChart-margin">
+            </div>
             <div class="ExchangeRateChart-legend">
                 <div>
-                <label for="start_month">Start Month:</label>
-                <select id="start_month">
-                    <option value="00">Jan</option>
-                    <option value="01">Feb</option>
-                    <option value="02">Mar</option>
-                    <option value="03">Apr</option>
-                    <option value="04">May</option>
-                    <option value="05">Jun</option>
-                    <option value="06">Jul</option>
-                    <option value="07">Aug</option>
-                    <option value="08">Sep</option>
-                    <option value="09">Oct</option>
-                    <option value="10">Nov</option>
-                    <option value="11">Dec</option>
-                </select>
-                <select id="start_year">
-                    <option>2020</option>
-                    <option>2019</option>
-                    <option>2018</option>
-                    <option>2017</option>
-                    <option>2016</option>
-                </select>
-            </div>
-            <div>
-                <label for="numOfMonths">Number of months (up to 12):</label>
-                <input type="number" id="numOfMonths" min="1" max="12">
-                <select id="currency_select">
-                    <option>USD</option>
-                    <option>EUR</option>
-                    <option>JPY</option>
-                    <option>GBP</option>
-                    <option>AUD</option>
-                    <option>HKD</optoin>
-                </select>
-            </div>
-                <button onClick="doFetch()">Show me the data!</button>
+                    <label for="start_month">Start Month:</label>
+                    <select id="start_month">
+                        <option value="00">Jan</option>
+                        <option value="01">Feb</option>
+                        <option value="02">Mar</option>
+                        <option value="03">Apr</option>
+                        <option value="04">May</option>
+                        <option value="05">Jun</option>
+                        <option value="06">Jul</option>
+                        <option value="07">Aug</option>
+                        <option value="08">Sep</option>
+                        <option value="09">Oct</option>
+                        <option value="10">Nov</option>
+                        <option value="11">Dec</option>
+                    </select>
+                    <select id="start_year">
+                        <option>2020</option>
+                        <option>2019</option>
+                        <option>2018</option>
+                        <option>2017</option>
+                        <option>2016</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="numOfMonths">Number of months (up to 12):</label>
+                    <input type="number" id="numOfMonths" min="1" max="12">
+                </div>
+                <div>
+                    <select id="currency_select">
+                        <option>USD</option>
+                        <option>EUR</option>
+                        <option>JPY</option>
+                        <option>GBP</option>
+                        <option>AUD</option>
+                        <option>HKD</option>
+                    </select>
+                </div>
+                <div>
+                    <button onClick="doFetch()">Show me the data!</button>
+                </div>
+                
             </div>
             <div class="ExchangeRateChart-display">
-
             </div>
             
-            <div class="ExchangeRateChart-margin"></div>
+            <div class="ExchangeRateChart-margin">
+            </div>
             
         </div>
     </div>
